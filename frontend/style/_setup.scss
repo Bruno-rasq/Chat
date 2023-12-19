@@ -43,6 +43,24 @@ body{
 
     background-color: $background-color;
     color: $letter-color;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+
+        width: 7px;             
+    }
+      
+    &::-webkit-scrollbar-track {
+
+        background: none;        
+    }
+      
+    &::-webkit-scrollbar-thumb {
+
+        background: $messages-other;    
+        border-radius: 20px;      
+        border: 3px solid $messages-other;
+    }
 }
 
 .container{

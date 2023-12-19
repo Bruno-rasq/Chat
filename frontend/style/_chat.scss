@@ -1,14 +1,14 @@
 .chat{
 
     @include WidthHeight(100%, 100%);
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
 
     .chat__messages{
 
         flex-grow: 1;
-        padding: 30px 30px 90px;
+        padding: 20px 30px 90px 20px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -42,6 +42,7 @@
 
     .chat__form{
 
+        background-color: $background-color;
         padding: 15px 20px;
         display: flex;
         align-items: center;
