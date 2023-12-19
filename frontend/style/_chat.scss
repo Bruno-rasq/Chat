@@ -1,0 +1,78 @@
+.chat{
+
+    @include WidthHeight(100%, 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .chat__messages{
+
+        flex-grow: 1;
+        padding: 30px 30px 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        .messages-self{
+
+            @include setMessages();
+            align-self: flex-end;
+            border-radius: 15px 15px 0 15px;
+            background: $messages-self;
+            color: $messagesself-letter;
+        }
+
+        .messages-others{
+
+            @include setMessages();
+            align-self: flex-start;
+            border-radius: 0 15px 15px 15px;
+            background-color: $messages-other;
+            color: $messagesOther-letter;
+
+            .messages-sender{
+
+                display: block;
+                margin-bottom: 15px;
+                font-weight: 500;
+                color: $messagesOther-letter;
+            }
+        }
+    }
+
+    .chat__form{
+
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        .chat__input{
+
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            flex-grow: 1;
+            background-color: $messagesInput-color;
+            color: $messagesInput-letter;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .chat__button{
+
+            border: none;
+            background: none;
+            color: $messagesIcon-color;
+            cursor: pointer;
+
+            img{
+                @include WidthHeight(40px, 40px);
+            }
+        }
+    }
+}

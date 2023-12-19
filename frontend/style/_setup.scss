@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    font-size:  $font-size;
+}
+
+@mixin setDisplay ($display, $direction, $justify, $align) {
+
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin WidthHeight($width, $height){
+
+    width: $width;
+    height: $height;
+}
+
+@mixin setBTNandINPUT(){
+
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 0.85rem;
+}
+
+@mixin setMessages(){
+
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 27px;
+}
+
+body{
+
+    background-color: $background-color;
+    color: $letter-color;
+}
+
+.container{
+
+    @include WidthHeight(100vw, 100dvh);
+    @include setDisplay(flex, column, center, center);
+}
