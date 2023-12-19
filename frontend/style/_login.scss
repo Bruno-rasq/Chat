@@ -5,7 +5,7 @@
     padding: 20px;
     border-radius: 5px;
 
-    background-color: #a7a7a7;
+    background-color: $messagesInput-color;
 
     h2{
 
@@ -43,10 +43,16 @@
             font-weight: 700;
             cursor: pointer;
             background-color: $buttonform-color;
-            color: $letter-color;
+            color: white;
 
             &:hover{
                 background-color: $btnform-hover;
+            }
+
+            &:disabled{
+
+                background-color: gray;
+                color: darkgray;
             }
 
         }

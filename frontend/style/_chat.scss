@@ -11,13 +11,19 @@
         padding: 20px 30px 90px 20px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: flex-start;
+
+        .user-connected{
+            text-align: center;
+            color: $messagesOther-letter;
+            margin-bottom: 15px;
+        }
 
         .messages-self{
 
             @include setMessages();
             align-self: flex-end;
-            border-radius: 15px 15px 0 15px;
+            border-radius: 20px 20px 0 20px;
             background: $messages-self;
             color: $messagesself-letter;
         }
@@ -26,7 +32,7 @@
 
             @include setMessages();
             align-self: flex-start;
-            border-radius: 0 15px 15px 15px;
+            border-radius: 0 20px 20px 20px;
             background-color: $messages-other;
             color: $messagesOther-letter;
 

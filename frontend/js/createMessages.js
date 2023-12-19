@@ -25,3 +25,12 @@ export const messageOthersElement = (content, sender, senderColor) => {
 
     return element
 }
+
+export const connectedElement = (username) => {
+
+    const div = document.createElement('div')
+    div.classList.add("user-connected")
+    div.innerHTML = `${username} entrou no chat.`
+
+    return div
+}

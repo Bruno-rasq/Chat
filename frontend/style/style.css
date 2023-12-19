@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: #c2c2c2;
-  color: #858585;
+  background-color: #f3f3f3;
+  color: #020711;
   overflow-x: hidden;
 }
 body::-webkit-scrollbar {
@@ -18,9 +18,9 @@ body::-webkit-scrollbar-track {
   background: none;
 }
 body::-webkit-scrollbar-thumb {
-  background: #030614;
+  background: #d3d3d3;
   border-radius: 20px;
-  border: 3px solid #030614;
+  border: 3px solid #d3d3d3;
 }
 
 .container {
@@ -37,7 +37,7 @@ body::-webkit-scrollbar-thumb {
   max-width: 330px;
   padding: 20px;
   border-radius: 5px;
-  background-color: #a7a7a7;
+  background-color: #dfdfdf;
 }
 .login h2 {
   text-align: center;
@@ -54,27 +54,31 @@ body::-webkit-scrollbar-thumb {
   border: none;
   border-radius: 5px;
   padding: 15px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   outline: none;
   font-weight: 600;
-  background-color: #e2e2e2;
-  color: #858585;
+  background-color: #f3f3f3;
+  color: #020711;
 }
 .login .login__form .login__input:focus {
-  outline: 2px solid #c2c2c2;
+  outline: 2px solid #f3f3f3;
 }
 .login .login__form .login__button {
   border: none;
   border-radius: 5px;
   padding: 15px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 700;
   cursor: pointer;
-  background-color: #919191;
-  color: #858585;
+  background-color: #0c041f;
+  color: white;
 }
 .login .login__form .login__button:hover {
-  background-color: #b3b3b3;
+  background-color: #0e102e;
+}
+.login .login__form .login__button:disabled {
+  background-color: gray;
+  color: darkgray;
 }
 
 .chat {
@@ -89,7 +93,12 @@ body::-webkit-scrollbar-thumb {
   padding: 20px 30px 90px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
+}
+.chat .chat__messages .user-connected {
+  text-align: center;
+  color: #5c5c5c;
+  margin-bottom: 15px;
 }
 .chat .chat__messages .messages-self {
   padding: 10px;
@@ -100,9 +109,9 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 15px;
   line-height: 27px;
   align-self: flex-end;
-  border-radius: 15px 15px 0 15px;
-  background: #d3d3d3;
-  color: #7c7c7c;
+  border-radius: 20px 20px 0 20px;
+  background: #2e2e2e;
+  color: #c7c7c7;
 }
 .chat .chat__messages .messages-others {
   padding: 10px;
@@ -113,18 +122,18 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 15px;
   line-height: 27px;
   align-self: flex-start;
-  border-radius: 0 15px 15px 15px;
-  background-color: #030614;
-  color: #d3d3d3;
+  border-radius: 0 20px 20px 20px;
+  background-color: #d3d3d3;
+  color: #5c5c5c;
 }
 .chat .chat__messages .messages-others .messages-sender {
   display: block;
   margin-bottom: 15px;
   font-weight: 500;
-  color: #d3d3d3;
+  color: #5c5c5c;
 }
 .chat .chat__form {
-  background-color: #c2c2c2;
+  background-color: #f3f3f3;
   padding: 15px 20px;
   display: flex;
   align-items: center;

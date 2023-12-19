@@ -1,11 +1,13 @@
-import { messageSelfElement, messageOthersElement } from "./createMessages.js";
+import { messageSelfElement, messageOthersElement, connectedElement } from "./createMessages.js";
 
 'use strict';
+
 // login elements
 
 const login = document.querySelector('.login');
 const login_form = login.querySelector('.login__form');
 const login_input = login.querySelector('.login__input');
+const login_btn = login.querySelector('.login__button');
 
 
 //  chat elements
@@ -35,6 +37,14 @@ const colors = [
 
 let websocket;
 
+const validationName = (name) => {
+
+    if(name.length >= 3){
+        return true
+    }
+    return false
+}
+
 const setRandomColor = () => {
 
     const index = Math.floor(Math.random() * colors.length)
@@ -48,6 +58,18 @@ const scrollscreen = () => {
         top: document.body.scrollHeight,
         behavior: "smooth"
     })
+}
+
+const enableForm = () => {
+
+    let name = login_input.value != '' ? true : false;
+
+    if(name){
+        login_btn.removeAttribute('disabled')
+        return
+    }
+
+    login_btn.setAttribute('disabled', '')
 }
 
 // processa o conteudo enviado pelo servidor
@@ -69,6 +91,11 @@ const processMessage = ({ data }) => {
 const handleLogin = (event) => {
 
     event.preventDefault()
+
+    if(!validationName(login_input.value)){
+        alert('Erro: Por favor, preencha o campo de nome com 3 caracteres ou mais...')
+        return;
+    }
 
     User.id = crypto.randomUUID()
     User.name = login_input.value
@@ -101,5 +128,6 @@ const sendMessage = (event) => {
     chat_input.value = ''
 }
 
+window.addEventListener('input', enableForm)
 login_form.addEventListener('submit', handleLogin)
 chat_form.addEventListener('submit', sendMessage)
