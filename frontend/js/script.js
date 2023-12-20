@@ -60,6 +60,7 @@ const scrollscreen = () => {
     })
 }
 
+// habilita  o envio do formulario de login
 const enableForm = () => {
 
     let name = login_input.value != '' ? true : false;
@@ -76,15 +77,29 @@ const enableForm = () => {
 // definindo se a mensagem é do proprio usuario ou de outro.
 const processMessage = ({ data }) => {
 
-    const { userId, userName, userColor, content} = JSON.parse(data)
+    const { userName, userId, userColor, content} = JSON.parse(data)
 
-    const message = userId == User.id 
-    ? messageSelfElement(content) 
-    : messageOthersElement(content, userName, userColor);
+    if( userName  && userId  && userColor  && content ){
 
-    chat_field.appendChild(message)
+        const message = userId == User.id 
+        ? messageSelfElement(content) 
+        : messageOthersElement(content, userName, userColor);
 
+        chat_field.appendChild(message)
+
+    } else {
+
+        userlogin(userName)
+    }
+    
     scrollscreen()
+}
+
+// sinaliza no chat que o usuario @param name entrou no chat
+const userlogin = (username) => {
+
+    const user = connectedElement(username)
+    chat_field.appendChild(user)
 }
 
 // assim que o login for concluido, cria o elemento User e o conecta ao servidor
@@ -107,9 +122,20 @@ const handleLogin = (event) => {
     websocket = new WebSocket("ws://localhost:8080")
     websocket.onmessage = processMessage
 
+    userConnected()
+
     console.log(User)
+
 }
 
+// envia ao servidor o nome do user que conectou
+const userConnected = () => {
+    setTimeout(() => {
+
+        websocket.send(JSON.stringify({ userName: login_input.value }))
+        
+    }, 2000)
+}
 
 // envia ao servidor um objeto com os dados do usuario e sua mensagem
 const sendMessage = (event) => {
@@ -117,8 +143,8 @@ const sendMessage = (event) => {
     event.preventDefault()
 
     const message = {
-        userId: User.id,
         userName: User.name,
+        userId: User.id,
         userColor: User.color,
         content: chat_input.value
     }
