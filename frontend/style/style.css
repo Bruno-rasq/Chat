@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: #f3f3f3;
-  color: #020711;
+  background-color: whitesmoke;
+  color: #a1a1a1;
   overflow-x: hidden;
 }
 body::-webkit-scrollbar {
@@ -37,7 +37,7 @@ body::-webkit-scrollbar-thumb {
   max-width: 330px;
   padding: 20px;
   border-radius: 5px;
-  background-color: #dfdfdf;
+  background-color: rgb(12, 12, 12);
 }
 .login h2 {
   text-align: center;
@@ -57,11 +57,11 @@ body::-webkit-scrollbar-thumb {
   font-size: 0.75rem;
   outline: none;
   font-weight: 600;
-  background-color: #f3f3f3;
-  color: #020711;
+  background-color: #383838;
+  color: #a1a1a1;
 }
 .login .login__form .login__input:focus {
-  outline: 2px solid #f3f3f3;
+  outline: 2px solid whitesmoke;
 }
 .login .login__form .login__button {
   border: none;
@@ -70,11 +70,11 @@ body::-webkit-scrollbar-thumb {
   font-size: 0.75rem;
   font-weight: 700;
   cursor: pointer;
-  background-color: #0c041f;
+  background-color: #383838;
   color: white;
 }
 .login .login__form .login__button:hover {
-  background-color: #0e102e;
+  background-color: #181818;
 }
 .login .login__form .login__button:disabled {
   background-color: gray;
@@ -87,6 +87,7 @@ body::-webkit-scrollbar-thumb {
   display: none;
   flex-direction: column;
   justify-content: space-between;
+  background-color: whitesmoke;
 }
 .chat .chat__messages {
   flex-grow: 1;
@@ -133,7 +134,7 @@ body::-webkit-scrollbar-thumb {
   color: #5c5c5c;
 }
 .chat .chat__form {
-  background-color: #f3f3f3;
+  background-color: whitesmoke;
   padding: 15px 20px;
   display: flex;
   align-items: center;
@@ -149,7 +150,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 8px;
   flex-grow: 1;
   background-color: #dfdfdf;
-  color: #c7c7c7;
+  color: black;
   outline: none;
   font-size: 1rem;
 }
